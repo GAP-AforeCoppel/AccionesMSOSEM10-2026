@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Folios MSO | Corte Sem 10</title>
+    <!-- Incluyendo Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importando html2canvas para descargar como imagen -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Importando fuente Inter para un look moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+        }
+    </style>
+</head>
+
+<body class="text-slate-800">
+    <div class="container mx-auto max-w-4xl p-4 sm:p-8 my-8">
+        
+        <!-- Botón de Descarga -->
+        <div class="flex justify-end mb-4">
+            <button id="download-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow-sm flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                <span>Descargar como PNG</span>
+            </button>
+        </div>
+
+        <div id="report-content" class="bg-white rounded-2xl shadow-xl p-6 sm:p-8">
+
+            <!-- Encabezado -->
+            <header class="border-b border-slate-200 pb-4 mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-end">
+                <div>
+                    <h1 class="text-2xl sm:text-3xl font-bold text-slate-900">Reporte Folios MSO</h1>
+                    <h2 class="text-lg text-slate-600 font-medium mt-1">Corte Sem 10</h2>
+                </div>
+                <div class="mt-2 sm:mt-0 text-right">
+                    <span class="inline-block bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-full uppercase tracking-wide font-semibold">Fecha de Corte</span>
+                    <p class="text-slate-800 font-semibold mt-1">05/03/2026</p>
+                </div>
+            </header>
+
+            <main>
+                <!-- Sección 1: Impacto y Resultados Clave -->
+                <section id="metrics-section" class="mb-10">
+                    <h2 class="text-xl font-semibold text-slate-700 mb-4 flex items-center gap-2">
+                        <span class="bg-blue-600 w-1.5 h-6 rounded-full inline-block"></span>
+                        1. Impacto y Resultados Clave
+                    </h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <!-- Total Gestión -->
+                        <div class="bg-white border-2 border-blue-500 p-5 rounded-xl shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-3xl font-bold text-slate-900">154</span>
+                                <p class="text-xs text-slate-500 font-medium uppercase tracking-wider">Total en Gestión</p>
+                            </div>
+                        </div>
+                        <!-- Resueltos -->
+                        <div class="bg-green-50 border border-green-200 p-5 rounded-xl shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 bg-green-100 text-green-700 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-3xl font-bold text-green-800">8</span>
+                                <p class="text-xs text-green-700 font-medium uppercase tracking-wider">Folios Resueltos</p>
+                            </div>
+                        </div>
+                        <!-- Pendientes -->
+                        <div class="bg-amber-50 border border-amber-200 p-5 rounded-xl shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-3xl font-bold text-amber-900">146</span>
+                                <p class="text-xs text-amber-800 font-medium uppercase tracking-wider">Pendientes</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 2: Acciones por Gerencia -->
+                <section id="actions-section" class="mb-10">
+                    <h2 class="text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2">
+                        <span class="bg-indigo-600 w-1.5 h-6 rounded-full inline-block"></span>
+                        2. Acciones Estratégicas por Gerencia
+                    </h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Admón. de Expedientes -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h3 class="text-xs font-bold text-teal-700 uppercase tracking-widest mb-3 flex items-center gap-2 px-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                Admón. de Expedientes
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <div class="md:col-span-3 bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
+                                    <h4 class="text-sm font-semibold text-slate-800 mb-2">Acciones y Seguimiento</h4>
+                                    <p class="text-sm text-slate-600 leading-relaxed">
+                                        <strong>Gestión de Quebrantos:</strong> Tras el análisis exhaustivo de casos críticos, se cuenta con la validación de Dirección. Se mantiene un monitoreo estrecho del proceso operativo para asegurar el cierre administrativo de los casos.
+                                    </p>
+                                </div>
+                                <div class="md:col-span-1 bg-white p-4 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-center text-center">
+                                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter mb-1">AVANCES ÚLTIMA SEMANA</p>
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center text-xs px-2">
+                                            <span class="text-slate-500">Universo</span>
+                                            <span class="font-bold text-slate-800">3</span>
+                                        </div>
+                                        <div class="flex justify-between items-center text-xs px-2">
+                                            <span class="text-slate-500">Resueltos</span>
+                                            <span class="font-bold text-green-600">1</span>
+                                        </div>
+                                        <div class="flex justify-between items-center text-xs px-2">
+                                            <span class="text-slate-500">Seguimiento</span>
+                                            <span class="font-bold text-amber-600">2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Retiros -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h3 class="text-xs font-bold text-indigo-700 uppercase tracking-widest mb-3 flex items-center gap-2 px-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                Retiros
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <div class="md:col-span-3 bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
+                                    <h4 class="text-sm font-semibold text-slate-800 mb-2">Acciones y Seguimiento</h4>
+                                    <p class="text-sm text-slate-600 leading-relaxed">
+                                        <strong>Homologación de Saldos:</strong> Se continúa trabajando de manera directa con el Instituto para la atención de los folios del universo restante. Estos casos se están notificando gradualmente al Infonavit con el objetivo de gestionar y agilizar su pronta solución.
+                                    </p>
+                                </div>
+                                <div class="md:col-span-1 bg-white p-4 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-center text-center">
+                                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter mb-1">AVANCES ÚLTIMA SEMANA</p>
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center text-xs px-2">
+                                            <span class="text-slate-500">Universo</span>
+                                            <span class="font-bold text-slate-800">92</span>
+                                        </div>
+                                        <div class="flex justify-between items-center text-xs px-2">
+                                            <span class="text-slate-500">Resueltos</span>
+                                            <span class="font-bold text-green-600">7</span>
+                                        </div>
+                                        <div class="flex justify-between items-center text-xs px-2">
+                                            <span class="text-slate-500">Seguimiento</span>
+                                            <span class="font-bold text-amber-600">85</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Traspasos -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h3 class="text-xs font-bold text-sky-700 uppercase tracking-widest mb-3 flex items-center gap-2 px-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                </svg>
+                                Traspasos
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <div class="md:col-span-3 bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
+                                    <h4 class="text-sm font-semibold text-slate-800 mb-2">Casos Pendientes</h4>
+                                    <p class="text-sm text-slate-600 leading-relaxed">
+                                        Se mantiene una revisión especial y continua en colaboración conjunta con ProceSAR y el Instituto. Se ejecutan acciones de seguimiento especializado para dar solución técnica al universo de folios restante.
+                                    </p>
+                                </div>
+                                <div class="md:col-span-1 bg-white p-4 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-center text-center">
+                                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter mb-1">AVANCES ÚLTIMA SEMANA</p>
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center text-xs px-2">
+                                            <span class="text-slate-500">Universo</span>
+                                            <span class="font-bold text-slate-800">59</span>
+                                        </div>
+                                        <div class="flex justify-between items-center text-xs px-2">
+                                            <span class="text-slate-500">Resueltos</span>
+                                            <span class="font-bold text-green-600">0</span>
+                                        </div>
+                                        <div class="flex justify-between items-center text-xs px-2">
+                                            <span class="text-slate-500">Seguimiento</span>
+                                            <span class="font-bold text-amber-600">59</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 3: Foco Crítico -->
+                <section id="focus-section">
+                    <h2 class="text-xl font-semibold text-slate-700 mb-4 flex items-center gap-2">
+                        <span class="bg-amber-500 w-1.5 h-6 rounded-full inline-block"></span>
+                        3. Foco Crítico Próxima Semana
+                    </h2>
+                    <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 shadow-sm">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477-4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-2">Alineación Operativa</h4>
+                                <div class="space-y-3">
+                                    <p class="text-sm text-slate-700 leading-relaxed">
+                                        <strong>Arranque de Sesiones Semanales de QA:</strong> Tras la excelente recepción y aceptación de la propuesta por parte del equipo de Operaciones, el foco principal será definir el calendario con fechas y horarios fijos para estas sesiones de seguimiento conjunto. Se tiene proyectado que estas mesas de trabajo inicien oficialmente a partir de la semana 11, con el objetivo central de aclarar dudas, analizar casuísticas de escenarios escalados a los Institutos y fortalecer la coordinación operativa.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Script para la funcionalidad de descarga -->
+    <script>
+        document.getElementById('download-btn').addEventListener('click', function() {
+            const reportElement = document.getElementById('report-content');
+            const btn = this;
+            const originalContent = btn.innerHTML;
+            
+            // Cambiar estado del botón mientras procesa
+            btn.innerHTML = `
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span>Generando...</span>
+            `;
+            btn.disabled = true;
+
+            // Generar el canvas con html2canvas
+            html2canvas(reportElement, {
+                scale: 2, // Aumenta la resolución y calidad de la imagen
+                useCORS: true,
+                backgroundColor: '#ffffff' // Asegura que el fondo sea blanco
+            }).then(canvas => {
+                // Crear un enlace temporal para forzar la descarga
+                const link = document.createElement('a');
+                link.download = 'Reporte_Folios_MSO_Sem10.png';
+                link.href = canvas.toDataURL('image/png', 1.0); // Calidad máxima
+                link.click();
+
+                // Restaurar el botón
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+            }).catch(err => {
+                console.error('Error al generar la imagen:', err);
+                alert('Hubo un error al generar la imagen. Por favor, intenta de nuevo.');
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+            });
+        });
+    </script>
+</body>
+
+</html>
